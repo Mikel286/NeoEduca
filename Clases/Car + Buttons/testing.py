@@ -1,15 +1,16 @@
-
+from motores import servo360
 from machine import Pin
 import time
 
-# Configura el pin donde está conectado el switch (por ejemplo, el pin 14)
-# Pin.IN -> lo configura como entrada
-# Pin.PULL_UP -> activa la resistencia interna de pull-up (opcional, depende del circuito)
 switch = Pin(0, Pin.IN, Pin.PULL_UP)
+motor = servo360(15)
+motor.barre()
 
 while True:
     if switch.value() == 0:
         print("🔘 El switch está PRESIONADO")
+        ## ✏️ Colocad aqui el codigo de motores
+        
     else:
         print("⚪ El switch está LIBERADO")
     time.sleep(0.2)
