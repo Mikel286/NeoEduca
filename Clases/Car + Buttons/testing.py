@@ -1,13 +1,18 @@
-from motores import carro, servo360
-from time import sleep
 
-pin_motorIzq = 14
-pin_motorDer = 15
-auto = carro(pin_motorIzq, pin_motorDer)
+from machine import Pin
+import time
 
-# Codigo de prueba para que veais como funciona las ruedas
-auto.moveadelante()
-sleep(1)
-auto.movedetener()
+# Configura el pin donde está conectado el switch (por ejemplo, el pin 14)
+# Pin.IN -> lo configura como entrada
+# Pin.PULL_UP -> activa la resistencia interna de pull-up (opcional, depende del circuito)
+switch = Pin(0, Pin.IN, Pin.PULL_UP)
+
+while True:
+    if switch.value() == 0:
+        print("🔘 El switch está PRESIONADO")
+    else:
+        print("⚪ El switch está LIBERADO")
+    time.sleep(0.2)
+
 
 
