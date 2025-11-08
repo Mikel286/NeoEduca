@@ -5,6 +5,8 @@ from tone import Buzzer
 from sensores import Ultrasonico
 
 led = Pin(2,Pin.OUT)
+led2 = Pin(3,Pin.OUT)
+led3 = Pin(4, Pin.OUT)
 buzzer = Buzzer(5)
 ultrasonido = Ultrasonico()
 
@@ -69,6 +71,8 @@ def phase_5()-> bool:
     for nota in cancion:
         musicalNote(notas[nota], 0.2)
     led.value(0)
+    led2.value(0)
+    led3.value(0)
     return True
 
 def phase_6()-> bool:
@@ -76,6 +80,8 @@ def phase_6()-> bool:
     for _ in range(30):
         if ultrasonido.medir() < 10:
             led.value(1)
+            led2.value(1)
+            led3.value(1)
             return phase_5()
         sleep(0.5)
     return True 
