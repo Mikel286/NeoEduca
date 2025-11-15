@@ -11,8 +11,6 @@ while True:
         print("🔘 El switch está PRESIONADO")
         ## ✏️ Colocad aqui el codigo de motores
         auto.moveadelante()
-        
-        
     else:
         print("⚪ El switch está LIBERADO")
         auto.movedetener()
