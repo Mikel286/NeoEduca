@@ -9,7 +9,6 @@ auto.setvelocidad(30,120)
 while True:
     if switch.value() == 0:
         print("🔘 El switch está PRESIONADO")
-        ## ✏️ Colocad aqui el codigo de motores
         auto.moveadelante()
     else:
         print("⚪ El switch está LIBERADO")
