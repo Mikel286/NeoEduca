@@ -1,5 +1,11 @@
 from machine import Pin, ADC
-import time
+from motores import servo360
+from sensores import Ldr
+from time import sleep
+
+# Configuracion de los motores
+ejeH = servo360(15)
+ejeV = servo360(14)
 
 # Configurar los pines del joystick
 x = ADC(26)   # VRx -> GP26 / ADC0
@@ -27,4 +33,17 @@ while bucle:
     if btn:
         bucle = False 
 
-    time.sleep(0.1)
+    if eje_x >= 99 and eje_y < 99:
+        ejeH.girar(0)
+    elif eje_x <= -99:
+        ejeH.girar(180)
+    elif eje_y >= 99:
+        ejeV.girar(0)
+    elif eje_y <= -99:
+        ejeV.girar(180)
+    else:
+        ejeH.detener()
+        ejeV.detener()
+
+    sleep(0.1)
+
