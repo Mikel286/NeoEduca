@@ -21,7 +21,7 @@ def making_objetc(speed = 0, form = "square", x_position = 0, y_position = 0, wi
 
 screen = game.Screen()
 screen.title("⚾ Ping Pong Game ⚾")
-screen.bgcolor(0,0,0)
+screen.bgcolor("black")
 screen.setup(width = 800, height = 600)
 screen.tracer(0)
 
@@ -73,19 +73,19 @@ def ball_update():
         direction *= -1
 
     # x_ball += (1 * direction)
-    y_ball += (10 * direction)
-    ball.setx(x_ball)
+    y_ball += (1 * direction)
+    # ball.setx(x_ball)
     ball.sety(y_ball)
     
-    y_B = y_ball
-    player_B.sety(y_B)
+    # y_B = y_ball
+    # player_B.sety(y_B)
 
 bucle  = True
 while bucle:
 
     screen.update()
     bucle = serial_update()
-    ball_update()
+    # ball_update()
 
 game.bye()
 
