@@ -40,3 +40,5 @@ Aquí dejo los links a todas las guias que tienen el contenido de cada una de la
 - [**😼 Guia de Scratch:**](https://www.canva.com/design/DAGvIDVVG-M/o03zC_ENwr96aK-M0AxmQg/edit?utm_content=DAGvIDVVG-M&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) Para los estudiantes que usan el programa Scratch.
 
 - [**🧩 Link a Tinkercad:**](https://www.tinkercad.com/joinclass/5W3CWBSRP) Para los estudiantes que trabajan con Diseño 3D.
+
+- [**🚗 Guia de Coche**](https://www.canva.com/design/DAG7yXNff2E/E_7ccsINFXFS2QdvS3bh8A/edit?utm_content=DAG7yXNff2E&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)

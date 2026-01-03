@@ -51,11 +51,11 @@ def serial_update():
         return False
     elif respuesta == "BIA":
         if y_A < 340:
-            y_A += 20
+            y_A += 10
             player_A.sety(y_A)
     elif respuesta == "BDA":
         if y_A > -340:
-            y_A -= 20
+            y_A -= 10
             player_A.sety(y_A)
     return True
 
@@ -73,7 +73,11 @@ def ball_update():
         direction *= -1
 
     # x_ball += (1 * direction)
+<<<<<<< HEAD
     y_ball += (1 * direction)
+=======
+    y_ball += (10 * direction)
+>>>>>>> 39ea3b5495a0a37f901b826624f5fda3fcaef938
     # ball.setx(x_ball)
     ball.sety(y_ball)
     
@@ -85,7 +89,11 @@ while bucle:
 
     screen.update()
     bucle = serial_update()
+<<<<<<< HEAD
     # ball_update()
+=======
+    #ball_update()
+>>>>>>> 39ea3b5495a0a37f901b826624f5fda3fcaef938
 
 game.bye()
 
