@@ -1,4 +1,4 @@
-from motores import servo360
+from motor import servo360
 from time import sleep
 from sensores import Ldr
 
