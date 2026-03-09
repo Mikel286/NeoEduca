@@ -55,6 +55,13 @@ def step_4():
     angulo_2 = int(input("Indique el angulo de giro derecho (0-180): "))
     
     coche.setvelocidad(angulo_1, angulo_2)
+
+    from motores import carro
+    from time import sleep
+
+    coche = carro(14,15)
+
+    coche.setvelocidad(180,0)
     
     coche.moveadelante()
     sleep(1)
