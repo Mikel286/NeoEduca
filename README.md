@@ -5,7 +5,9 @@
 ¡Hola, estudiantes! 🎓  
 Bienvenidos al repositorio oficial de **Neoeduca**, el espacio donde aprenderemos, construiremos y compartiremos conocimiento juntos.  
 
-Aquí encontrarás todos los recursos, ejemplos de código, proyectos y guías que utilizaremos durante el curso. Este repositorio será tu compañero de viaje para explorar, practicar y crecer en el mundo del desarrollo y la tecnología.  
+Aquí encontrarás todos los recursos, ejemplos de código, proyectos y guías que utilizaremos durante el curso. Este repositorio será tu compañero de viaje para explorar, practicar y crecer en el mundo del desarrollo y la tecnología. 
+
+![Imagen de portada](config/Assets/img1.png)
 
 ---
 
@@ -41,4 +43,9 @@ Aquí dejo los links a todas las guias que tienen el contenido de cada una de la
 
 - [**🧩 Link a Tinkercad:**](https://www.tinkercad.com/joinclass/5W3CWBSRP) Para los estudiantes que trabajan con Diseño 3D.
 
-- [**🚗 Guia de Coche**](https://www.canva.com/design/DAG7yXNff2E/E_7ccsINFXFS2QdvS3bh8A/edit?utm_content=DAG7yXNff2E&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+## 📹TUTORIALES DEL PROFE📹
+
+- **TUTORIALES DISEÑO 3D**
+    - [✍🏻 **Diseño 3D: Capsula 1:**](https://youtu.be/gGQJSDf0Rb8) En esta capsula vemos el diseño de llaveros 3d paso a paso.
+
+    - [✍🏻 **Diseño 3D: Capsula 2:**](https://youtu.be/9kSFTCK-G7Y) En esta capsula vemos el diseño de figuras 3d paso a paso.
