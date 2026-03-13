@@ -7,7 +7,7 @@ Bienvenidos al repositorio oficial de **Neoeduca**, el espacio donde aprenderemo
 
 Aquí encontrarás todos los recursos, ejemplos de código, proyectos y guías que utilizaremos durante el curso. Este repositorio será tu compañero de viaje para explorar, practicar y crecer en el mundo del desarrollo y la tecnología. 
 
-![Imagen de portada](config/Assets/img1.png)
+![Imagen de portada](Config/Assets/img1.png)
 
 ---
 
