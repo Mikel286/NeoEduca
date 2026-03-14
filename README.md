@@ -49,3 +49,7 @@ Aquí dejo los links a todas las guias que tienen el contenido de cada una de la
     - [✍🏻 **Diseño 3D: Capsula 1:**](https://youtu.be/gGQJSDf0Rb8) En esta capsula vemos el diseño de llaveros 3d paso a paso.
 
     - [✍🏻 **Diseño 3D: Capsula 2:**](https://youtu.be/9kSFTCK-G7Y) En esta capsula vemos el diseño de figuras 3d paso a paso.
+
+## ✏️PIZARRA ONLINE✏️
+
+- [✏️ Pizarra online](https://www.canva.com/design/DAHD7JhGlQE/D5zawdCsyN_rlwn403K1NQ/edit?utm_content=DAHD7JhGlQE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
