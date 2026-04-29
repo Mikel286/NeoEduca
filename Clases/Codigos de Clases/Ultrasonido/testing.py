@@ -8,6 +8,7 @@ sensor = Ultrasonico()
 for _ in range(10):
     
     distancia = sensor.medir()
+    print(distancia)
     
     if distancia < 400:
         led.value(1)
