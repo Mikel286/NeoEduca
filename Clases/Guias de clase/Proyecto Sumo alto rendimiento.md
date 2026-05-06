@@ -136,3 +136,46 @@ while bucle:
 Un motor de corriente continua (CC o DC) transforma energía eléctrica en mecánica, creando movimiento rotatorio a través de campos magnéticos y fuerza de Lorentz. Consta principalmente de un estator (imanes) y un rotor (bobinas). Se utiliza en robótica, juguetes y maquinaria, destacando por su control preciso de velocidad y par.
 
 ### Que es un puente H
+
+Un puente H es un circuito electrónico de cuatro interruptores (transistores/MOSFETs) que permite controlar el sentido de giro (horario/antihorario) y la velocidad de motores de corriente continua (DC) sin cambiar la alimentación. Su forma en "H" habilita la inversión de polaridad en el motor, siendo fundamental en robótica y actuadores.
+
+## Resolviendo Desafio de sumo
+
+### Modificando libreria sensores
+
+Para el desafio de sumo, necesitaremos mas de un sensor ultrasonico. Por tanto, la libreria de sensores en su forma standar no nos va a servir por que forzamos a que todo objeto  de la clase `Ultrasonico` tenga como pines el GP18 y GP19. Lo anterior, se debe a la siguiente parte del código en `sensores.py`:
+
+```python
+class Ultrasonico:   
+    def __init__(self):
+        self.trig_pin = Pin(18, Pin.OUT) 
+        self.echo_pin = Pin(19, Pin.IN)
+        self.SOUND_SPEED=340
+```
+
+Para solucionar esto, tenemos que cambiar esta parte a lo siguiente:
+
+```python
+class Ultrasonico:   
+    def __init__(self, pin_trig, pin_eco): # Cambio aquí
+        self.trig_pin = Pin(pin_trig, Pin.OUT) # Cambio aquí
+        self.echo_pin = Pin(pin_eco, Pin.IN) # Cambio aquí
+        self.SOUND_SPEED=340
+```
+
+### Probando nuevo sensores
+
+Una vez modificada la librería `sensores.py`, procedemos a probar varios ultrasonicos con el siguiente código:
+
+```python
+from sensores import Ultrasonico
+from time import sleep
+
+sensor1 = Ultrasonico(18,19)
+sensor2 = Ultrasonico(16,17)
+sensor3 = Ultrasonico(11,12)
+
+while True:
+
+    print(f"sensor1:{sensor1.medir()}    sensor2:{sensor2.medir()}    sensor3:{sensor3.medir()}")
+```
