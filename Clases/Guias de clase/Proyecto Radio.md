@@ -123,3 +123,95 @@ sleep(1)
 buzzer.off()
 ```
 
+### Ejercicio 2: Juntando tonos y frecuencias
+Tendras que hacer un código donde puedas emitir tres tonos distintos con el buzzer y que estos vayan acompañados con una secuencia de led particular para cada sonido. Si no sabes por donde empezar, no te preocupes porque te paso el siguiente código incompleto:
+
+```python
+
+from tone import Buzzer
+from machine import Pin
+from time import sleep
+
+led_izq = Pin(2, Pin.OUT)
+led_cen = Pin(3, Pin.OUT)
+led_der = Pin(4, Pin.OUT)
+
+buzzer = Buzzer(5)
+
+# Colocar la primera frecuencia y secuencia de leds 👋🏻
+buzzer.on(440)
+led_izq.()
+led_cen.()
+led_der.()
+
+sleep(1)
+
+# Colocar la segunda frecuencia y secuencia de leds 👋🏻
+buzzer.on(440)
+led_izq.()
+led_cen.()
+led_der.()
+
+sleep(1)
+
+# Colocar la tercera frecuencia y secuencia de leds 👋🏻
+buzzer.on(440)
+led_izq.()
+led_cen.()
+led_der.()
+
+sleep(1)
+
+```
+
+### Ejercicio 3: Emitiendo una frecuencia y encendiendo un led al azar
+
+Tendras que hacer un codigo que cada vez que se ejecute, haga las siguientes dos cosas:
+
+- Encienda y apague un led al azar
+
+- Emita un sonido a una frecuencia al azar
+
+Para este ejercicio tendras que ver la siguiente mini sección sobre la libreria `random`:
+
+#### Librería `random` 
+
+La librería random es un módulo integrado en la biblioteca estándar de Python que permite generar números pseudoaleatorios y seleccionar elementos al azar. No requiere instalación previa; simplemente debes añadir `import random` al inicio de tu código para empezar a usar sus funciones.
+
+De esta libreria vamos a usar el comando `randint`. La función `randint()` en Python, perteneciente al módulo `random`, genera un número entero aleatorio dentro de un rango específico, incluyendo tanto el valor mínimo como el máximo $[a, b]$.
+
+Para entender mejor esto, prueba el siguiente codigo:
+
+```python
+
+from random import randint
+
+print(f"Se genera el numero al azar: {randint(1,100)}")
+
+```
+
+#### Ayuda ejercicio 3
+
+Una vez que hayas visto el comando `random`, te dejo el siguiente código para que te guies si estas perdido:
+
+```python
+
+from tone import Buzzer
+from machine import Pin
+from time import sleep
+
+led_izq = Pin(2, Pin.OUT)
+led_cen = Pin(3, Pin.OUT)
+led_der = Pin(4, Pin.OUT)
+
+buzzer = Buzzer(5)
+
+numero_azar = # Coloca aqui el comando para generar un numero al azar entre 1 y 3
+
+if numero_azar == 1:
+    # Colocar primera acción
+elif numero_azar == 2:
+    # Colocar segunda acción
+elif numero_azar == 3:
+    # Colocar tercera acción 
+```
