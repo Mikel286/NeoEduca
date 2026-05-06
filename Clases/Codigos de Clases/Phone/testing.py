@@ -1,5 +1,4 @@
 from keyboard import Keyboard
-from machine import Pin
 import time
 
 def llamar(numero):
