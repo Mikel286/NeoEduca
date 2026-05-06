@@ -242,3 +242,32 @@ while True:
 
     print(f"sensor1:{sensor1.medir()}    sensor2:{sensor2.medir()}    sensor3:{sensor3.medir()}")
 ```
+### Aplicando sensores a desafio
+
+Una vez hemos probado el correcto funcionamiento de los sensores tenemos que aplicarlo al desafio. Para ello, sumaremos condicionales a nuestro código anterior:
+
+```python
+from sensores import Ultrasonico
+from time import sleep
+
+sensor1 = Ultrasonico(18,19)
+sensor2 = Ultrasonico(16,17)
+sensor3 = Ultrasonico(11,12)
+
+limite = 30
+
+while True:
+
+    medicion1 = sensor1.medir()
+    medicion2 = sensor2.medir()
+    medicion3 = sensor3.medir()
+
+    if medicion1 < limite:
+        print("Obstaculo detectado en sensor1")
+
+    if medicion2 < limite:
+        print("Obstaculo detectado en sensor2")
+    
+    if medicion3 < limite:
+        print("Obstaculo detectado en sensor3")
+```
