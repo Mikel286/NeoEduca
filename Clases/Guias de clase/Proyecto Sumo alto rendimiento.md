@@ -202,6 +202,43 @@ def izquierda():
 
 Un puente H es un circuito electrónico de cuatro interruptores (transistores/MOSFETs) que permite controlar el sentido de giro (horario/antihorario) y la velocidad de motores de corriente continua (DC) sin cambiar la alimentación. Su forma en "H" habilita la inversión de polaridad en el motor, siendo fundamental en robótica y actuadores.
 
+## 💻 Reforzando condicionales
+
+### Que son las condiciones
+
+Los condicionales en Python permiten ejecutar bloques de código específicos basados en si una condición es verdadera o falsa. Se estructuran mediante indentación (espaciado) y dos puntos (:), facilitando la toma de decisiones lógica. 
+
+Las formas de establecer una condición en python se separan en los siguientes tres comandos:
+
+- `if`: Evalúa la primera condición
+
+- `elif`: Verifica condiciones adicionales
+
+- `else`: Ejecuta código si las anteriores fallan.
+
+Cuando yo evaluo dos condiciones en una misma linea, tengo dos comandos que puedo utilizar y **cuyo significado es totalmente distinto**:
+
+- `and`: Sean A y B condiciones, usar `and` implica que tanto A como B deben ser verdaderas para que se cumpla la condición.
+
+- `or`: Sean A y B condiciones, usar `or` implica que basta con que A o B sean verdaderas para que la condición se cumpla.
+
+### Probando las condiciones
+
+Para entender esto mejor veamos el siguiente ejemplo de codigo donde comprobamos si un numero es multiplo de 2 y 3:
+
+```python
+
+numero = int(input("Entregame un numero: "))
+
+if numero % 2 == 0 and numero % 3 == 0:
+    print("El numero es multiplo de 2 y 3...")
+elif numero % 2 == 0 or numero % 3 == 0:
+    print("El numero es multiplo de 2 o 3...")
+else:
+    print("El numero no es multiplo de 2 y 3...")
+    
+```
+
 ## Resolviendo Desafio de sumo
 
 ### Modificando libreria sensores
