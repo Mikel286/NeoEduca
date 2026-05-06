@@ -135,6 +135,69 @@ while bucle:
 ### Que es un motor DC
 Un motor de corriente continua (CC o DC) transforma energía eléctrica en mecánica, creando movimiento rotatorio a través de campos magnéticos y fuerza de Lorentz. Consta principalmente de un estator (imanes) y un rotor (bobinas). Se utiliza en robótica, juguetes y maquinaria, destacando por su control preciso de velocidad y par.
 
+### Probando motor dc
+Para llevar esto a la práctica, veamos el siguiente código:
+
+```python
+
+from machine import Pin
+from time import sleep
+
+izq1 = Pin(7, Pin.OUT)
+izq2 = Pin(6, Pin.OUT)
+der1 = Pin(9, Pin.OUT)
+
+izq1.on()
+izq2.off()
+der1.on()
+der2.off()
+
+sleep(1)
+
+izq1.on()
+izq2.on()
+der1.on()
+der2.on()
+```
+
+Para un uso avanzado de los motores, vamos a implementar el uso de funciones que trabajen todos los movimientos:
+
+```python
+from machine import Pin
+from time import sleep
+
+izq1 = Pin(7, Pin.OUT)
+izq2 = Pin(6, Pin.OUT)
+der1 = Pin(9, Pin.OUT)
+
+#definiciones - movimiento
+def avanzar():
+    iz1.on()
+    iz2.off()
+    de1.on()
+    de2.off()
+    
+#definiciones - retroceder [no es utilizado aun]
+def retroceder():
+    iz1.off()
+    iz2.on()
+    de1.off()
+    de2.on()
+    
+#definiciones -  direcciones
+def derecha():
+    iz1.off()
+    iz2.on()
+    de1.on()
+    de2.off()
+    
+def izquierda():
+    iz1.on()
+    iz2.off()
+    de1.off()
+    de2.on()
+```
+
 ### Que es un puente H
 
 Un puente H es un circuito electrónico de cuatro interruptores (transistores/MOSFETs) que permite controlar el sentido de giro (horario/antihorario) y la velocidad de motores de corriente continua (DC) sin cambiar la alimentación. Su forma en "H" habilita la inversión de polaridad en el motor, siendo fundamental en robótica y actuadores.
