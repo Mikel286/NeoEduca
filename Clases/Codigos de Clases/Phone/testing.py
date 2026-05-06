@@ -1,4 +1,4 @@
-from keyboard import Phone
+from keyboard import Keyboard
 from machine import Pin
 import time
 
@@ -8,7 +8,7 @@ def llamar(numero):
         return True
     return False 
 
-teclado = Phone()
+teclado = Keyboard()
 contactos = dict()
 numero = ""
 while True:
