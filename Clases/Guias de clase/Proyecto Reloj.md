@@ -2,9 +2,9 @@
 
 ## 👋🏻 Presentación
 
-Hola alumno del taller, esta es la guía para aprender con el proyecto **Torreta** desarrollado por el profesor Mikel Ania.
+Hola alumno del taller, esta es la guía para aprender con el proyecto **Reloj** desarrollado por el profesor Mikel Ania.
 
-Con el, aprenderas sobre la conexión y la programación tanto de motores como de sensor ultrasonico a traves del IDE Thonny con el lenguaje de programación Python.
+Con el, aprenderas sobre la conexión y la programación tanto de motores como de componentes basicos a traves del IDE Thonny con el lenguaje de programación Python.
 
 ## 💡 Conociendo los componentes
 
@@ -152,99 +152,6 @@ motor = Servo360(14)
 motor.barrer()
 ```
 
-### Que es un sensor Ultrasonico
-El sensor HC-SR04 es un módulo ultrasónico de medición de distancia, popular y económico, que funciona enviando pulsos de sonido $40\text{kHz}$ y midiendo el tiempo de rebote (ecolocalización).
-
-Para entender mejor su funcionamiento, revisa la siguiente imagen que explica el proceso de cálculo de distancia a traves del sensor:
-
-![Imagen de Ultrasonico](assets/Proyecto%20Torreta%201.jpg)
-
-### Librería `sensores`
-
-Para hacer funcionar uno o mas sensores LDR, necesitamos guardar dentro de la placa la librería `sensores.py` que tiene el siguiente código:
-
-```python
-from machine import Pin, time_pulse_us
-from time import sleep_ms, sleep_us, ticks_diff, ticks_us
-class Ldr:
-    def __init__(self, pin):
-        self.pin = pin
-        
-    
-    def RCtime(self):    
-        sensor = Pin(self.pin, Pin.OUT)
-        sensor.on() 
-        sleep_ms(1)
-        
-        sensor = Pin(self.pin, Pin.IN) 
-        sensor.off()
-        start_time = ticks_us()
-        while sensor.value():
-            pass
-        end_time = ticks_us()
-
-        return ticks_diff(end_time, start_time)
-    
-
-    def medir(self):
-        return self.RCtime()
-
-class Qti:
-    def __init__(self, pin):
-        self.pin = pin
-        
-    
-    def RCtime(self):    
-        sensor = Pin(self.pin, Pin.OUT)
-        sensor.on() 
-        sleep_ms(1)
-        
-        sensor = Pin(self.pin, Pin.IN) 
-        sensor.off()
-        start_time = ticks_us()
-        while sensor.value():
-            pass
-        end_time = ticks_us()
-
-        return ticks_diff(end_time, start_time)
-    
-
-    def medir(self):
-        return self.RCtime()
-
-class Ultrasonico:   
-    def __init__(self):
-        self.trig_pin = Pin(18, Pin.OUT) 
-        self.echo_pin = Pin(19, Pin.IN)
-        self.SOUND_SPEED=340
-        
-    def medir(self):
-        self.trig_pin.value(0)
-        sleep_us(5)
-        self.trig_pin.value(1)
-        sleep_us(10)
-        self.trig_pin.value(0)
-        ultrason_duration = time_pulse_us(self.echo_pin, 1, 30000)
-        distance_cm = self.SOUND_SPEED * ultrason_duration / 20000
-        return distance_cm
-```
-
-### Probando el sensor Ultrasonico
-
-Para probar el funcionamiento de un sensor LDR, podemos usar el siguiente código que nos entregará las lecturas de un sensor LDR:
-
-```python
-from sensores import LUltrasonico
-from time import sleep
-
-sensor = Ultrasonico()
-
-bucle = True
-while bucle:
-    print(f"El valor entregado por el sensor es: {sensor.medir()}")
-    sleep(0.3)
-```
-
 ## 🖥️ Código para empezar a probarlo
 
 Una vez la conexión este bien realizada y el archivo `motores.py` este guardado dentro de la placa, en un archivo nuevo vamos a probar el siguiente código:
@@ -255,15 +162,18 @@ from time import sleep
 
 motor = Servo360(14)
 
-angulo = int(input("Ingrese el angulo (0-180) del motor: "))
-tiempo = float(input("Ingrese el tiempo de giro del motor: "))
+angulo = 180
+tiempo = 1
 
-motor.barrer(angulo)
-sleep(tiempo)
-motor.detener()
+bucle = True
+
+while bucle:
+    motor.barrer(angulo)
+    sleep(tiempo)
+    motor.detener()
 ```
 
-En este programa, podemos elegir el sentido y tiempo de giro de cada uno de los motores de este proyecto.
+En este programa, podemos simular el movimiento de la aguja de un reloj.
 
 ## 🖥️ Ejercicios del proyecto
 
@@ -274,14 +184,12 @@ A traves del programa de prueba anterior, identifica con que angulo se realiza c
 - Sentido horario del motor : `completar`
 - Sentido anti-horario del motor : `completar`
 
-### Ejercicio 2: Movimiento + lectura
+### Ejercicio 2: Tic Tac del reloj
 
-Escribe un programa que te permita mover en un angulo y tiempo especificos los motores del proyecto y luego realiza una lectura con el sensor LDR. Si no sabes por donde empezar, te paso el siguiente código para que te guies:
+Escribe un programa que te permita realizar el tic tac de un reloj. Si no sabes por donde empezar, te dejo el siguiente código como guía:
 
 ```python
-from sensores import Ultrasonico
 from motores import Servo360
-from machine import Pin
 from time import sleep
 
 motor = Servo360(14)
@@ -290,17 +198,16 @@ sensor = Ultrasonico()
 angulo = # Escribe codigo aquí 👋🏻
 tiempo = # Escribe codigo aquí 👋🏻
 
-motor.barrer(angulo)
-sleep(tiempo)
-motor.detener()
-
-# Escribe codigo aquí para el sensor Ultrasonico 👋🏻
-
+bucle = True
+while bucle:
+    motor.barrer(angulo)
+    sleep(tiempo)
+    motor.detener()
 ```
 
-### Ejercicio 3: Implementación de botones
+### Ejercicio 3: Implementación de Led
 
-Incluye botones y diseña un programa que te permitan controlar manualmente uno de los motores del proyecto. Si tienes dudas de por donde empezar, te dejo el siguiente código de ayuda:
+Incluye un led al proyecto y diseña un programa que te permita compaginar el encendido y apagado de un led con el tic tac del reloj. Si tienes dudas de por donde empezar, te dejo el siguiente código de ayuda:
 
 ```python
 from motores import Servo360
@@ -308,72 +215,104 @@ from machine import Pin
 from time import sleep
 
 motor = Servo360(14)
+led = Pin(2, Pin.ON)
 
-switch_izq = Pin(0, Pin.IN, Pin.PULL_UP)
-switch_der = Pin(1, Pin.IN, Pin.PULL_UP)
+angulo = # Colaca código aquí 👋🏻
+tiempo = # Coloca código aquí 👋🏻
 
 bucle = True
 while bucle:
 
-    if switch_izq.value() == 0:
-        print("🔘 El switch_izq está PRESIONADO")
-        # Colocar código aquí 👋🏻
-    elif switch_der.value() == 0:
-        print("🔘 El switch_der está PRESIONADO")
-        # Colocar código aquí 👋🏻
+    motor.girar(angulo)
+    # Coloca código aquí 👋🏻
+    sleep(tiempo)
+    motor.detener()
+    # Coloca código aquí 👋🏻
 
     sleep(0.2)
 ```
 
-### Ejercicio 4: Acción sonar
+### Ejercicio 4: Tic Tac con leds intercalados
 
-Diseña un programa que permita al proyecto actuar como sonar capaz de localizar enemigos en angulos de 360 grados horarios y anti-horarios para no enredar el cable. Si no sabes por donde empezar, te dejo el siguiente código como guía:
+Diseña un programa que permita al proyecto compaginar el encendido y apagado de dos leds con el tic tac del reloj. Cuando hablo de compaginar el encendido y apagado de dos leds, me refiero al fenomeno que ocurre en este codigo:
 
 ```python
-from sensores import Ultrasonico
+from machine import Pin
+from time import sleep
+
+led1 = Pin(2, Pin.OUT)
+led2 = Pin(3, Pin.OUT)
+
+contador = 1
+while contador < 20:
+    if contador % 2 == 0:
+        led1.on()
+        sleep(0.5)
+        led1.off()
+    elif contador % 2 == 1:
+        led2.on()
+        sleep(0.5)
+        led2.off()
+    contador += 1
+```
+
+Si no sabes por donde empezar, te dejo el siguiente código como guía:
+
+```python
 from motores import Servo360
+from machine import Pin
 from time import sleep
 
 motor = Servo360(14)
-sensor = Ultrasonico()
+led = Pin(2, Pin.OUT)
 
-angulo = int(input("Ingrese el angulo (0-180) del motor: "))
-tiempo = float(input("Ingrese el tiempo de giro del motor: "))
-repeticiones = int(input("Ingrese el numero de repeticiones: "))
+angulo = 180
+tiempo = 0.02
 
-for _ in range(repeticiones):
-    # Tienes que colocar código aquí 👋🏻
+bucle = True
+contador = 1
+while bucle:
 
-angulo = int(input("Ingrese el angulo (0-180) del motor: "))
-tiempo = float(input("Ingrese el tiempo de giro del motor: "))
-repeticiones = int(input("Ingrese el numero de repeticiones: "))
+    motor.girar(angulo)
 
-for _ in range(repeticiones):
-    # Tienes que colocar código aquí 👋🏻
-
+    if # Coloca código aquí 👋🏻
+        # Coloca código aquí 👋🏻
+    elif # Coloca código aquí 👋🏻
+        # Coloca código aquí 👋🏻
+    
+    motor.detener()
+    sleep(0.02)
+    contador += 1
 ```
 
 
 ### Ejercicio 5: Interfaz de control del proyecto
-Diseña un programa que entregue un panel de control donde a traves de `inputs` especificos puedas controlar los movimientos  y las mediciones del proyecto. Si tienes dudas de por donde empezar, te paso el siguiente código para que te guies:
+Diseña un programa que haga lo mismo que en el ejercicio 4 pero sumale un buzzer que emita un sonido con una frecuencia distinta para cada led. Si tienes dudas de por donde empezar, te paso el siguiente código para que te guies:
 
 ```python
-from sensores import Ultrasonico
 from motores import Servo360
+from machine import Pin
 from time import sleep
 
 motor = Servo360(14)
-sensor = Ultrasonico()
+led = Pin(2, Pin.OUT)
+
+angulo = 180
+tiempo = 0.02
 
 bucle = True
-
+contador = 1
 while bucle:
 
-    accion = input("Indique la acción que quiere realizar: ")
+    motor.girar(angulo)
 
-    if accion == "0":
-        print("Saliendo del programa...")
-    else:
-        print(f"La accion {accion} no se reconoce...")
+    if # Coloca código aquí 👋🏻
+        # Coloca código aquí 👋🏻
+    elif # Coloca código aquí 👋🏻
+        # Coloca código aquí 👋🏻
+    
+    motor.detener()
+    sleep(0.02)
+    contador += 1
 ```
 
