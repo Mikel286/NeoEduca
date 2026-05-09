@@ -145,10 +145,10 @@ class carro:
 Para probar el funcionamiento de los servomotores, podemos usar el siguiente código de prueba:
 
 ```python
-from motores import Servo360
+from motores import servo360
 
-motor_izq = Servo360(14)
-motor_der = Servo360(15)
+motor_izq = servo360(14)
+motor_der = servo360(15)
 
 motor_izq.barrer()
 motor_der.barrer()
@@ -249,11 +249,11 @@ while bucle:
 Una vez la conexión este bien realizada y el archivo `motores.py` este guardado dentro de la placa, en un archivo nuevo vamos a probar el siguiente código:
 
 ```python
-from motores import Servo360
+from motores import servo360
 from time import sleep
 
-motor_x = Servo360(14)
-motor_y = Servo360(15)
+motor_x = servo360(14)
+motor_y = servo360(15)
 
 angulo_x = int(input("Ingrese el angulo (0-180) del eje x : "))
 angulo_y = int(input("Ingrese el angulo (0-180) del eje y: "))
@@ -293,8 +293,8 @@ from motores import Servo360
 from machine import Pin
 from time import sleep
 
-motor_x = Servo360(14)
-motor_y = Servo360(15)
+motor_x = servo360(14)
+motor_y = servo360(15)
 
 sensor = LDR(6)
 
@@ -321,12 +321,12 @@ motor_y.detener()
 Incluye botones y diseña un programa que te permitan controlar manualmente uno de los motores del proyecto. Si tienes dudas de por donde empezar, te dejo el siguiente código de ayuda:
 
 ```python
-from motores import Servo360
+from motores import servo360
 from machine import Pin
 from time import sleep
 
-motor_x = Servo360(14)
-motor_y = Servo360(15)
+motor_x = servo360(14)
+motor_y = servo360(15)
 
 switch_izq = Pin(0, Pin.IN, Pin.PULL_UP)
 switch_der = Pin(1, Pin.IN, Pin.PULL_UP)
@@ -370,7 +370,7 @@ while bucle:
 Diseña un programa que entregue un panel de control donde a traves de `inputs` especificos puedas controlar los motores del proyecto. Si tienes dudas de por donde empezar, te paso el siguiente código para que te guies:
 
 ```python
-from motores import Servo360
+from motores import servo360
 from time import sleep
 
 motor_x = Servo360(14)

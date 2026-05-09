@@ -123,6 +123,10 @@ sleep(1)
 buzzer.off()
 ```
 
+Para este ejercicio tendras que usar la siguiente tabla de frecuencias:
+
+![Tabla de frecuencias](assets/Radio%201.png)
+
 ### Ejercicio 2: Juntando tonos y frecuencias
 Tendras que hacer un código donde puedas emitir tres tonos distintos con el buzzer y que estos vayan acompañados con una secuencia de led particular para cada sonido. Si no sabes por donde empezar, no te preocupes porque te paso el siguiente código incompleto:
 
@@ -215,3 +219,21 @@ elif numero_azar == 2:
 elif numero_azar == 3:
     # Colocar tercera acción 
 ```
+
+### Ejercicio 4: Emitiendo una canción
+
+Construye un código que te permita tocar una canción en 8 bits a traves del buzzer. Si no sabes por donde empezar, te dejo la siguiente canción y un código que te pueden ayudar:
+
+#### Canción de Super Mario
+
+La partitura de la canción es la siguiente:
+
+- DO5  250ms - SOL5 250ms - LA5  250ms -SOL5 250ms
+
+- MI5  250ms - SOL5 250ms - DO6  500ms
+
+- LA5  250ms - SOL5 250ms - MI5  250ms - RE5  250ms
+
+- DO5  500ms - SOL4 500ms
+
+La frecuencia de las notas musicales es la siguiente

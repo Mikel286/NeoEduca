@@ -145,9 +145,9 @@ class carro:
 Para probar el funcionamiento de los servomotores, podemos usar el siguiente código de prueba:
 
 ```python
-from motores import Servo360
+from motores import servo360
 
-motor = Servo360(14)
+motor = servo360(14)
 
 motor.barrer()
 ```
@@ -157,10 +157,10 @@ motor.barrer()
 Una vez la conexión este bien realizada y el archivo `motores.py` este guardado dentro de la placa, en un archivo nuevo vamos a probar el siguiente código:
 
 ```python
-from motores import Servo360
+from motores import servo360
 from time import sleep
 
-motor = Servo360(14)
+motor = servo360(14)
 
 angulo = 180
 tiempo = 1
@@ -189,10 +189,10 @@ A traves del programa de prueba anterior, identifica con que angulo se realiza c
 Escribe un programa que te permita realizar el tic tac de un reloj. Si no sabes por donde empezar, te dejo el siguiente código como guía:
 
 ```python
-from motores import Servo360
+from motores import servo360
 from time import sleep
 
-motor = Servo360(14)
+motor = servo360(14)
 sensor = Ultrasonico()
 
 angulo = # Escribe codigo aquí 👋🏻
@@ -210,11 +210,11 @@ while bucle:
 Incluye un led al proyecto y diseña un programa que te permita compaginar el encendido y apagado de un led con el tic tac del reloj. Si tienes dudas de por donde empezar, te dejo el siguiente código de ayuda:
 
 ```python
-from motores import Servo360
+from motores import servo360
 from machine import Pin
 from time import sleep
 
-motor = Servo360(14)
+motor = servo360(14)
 led = Pin(2, Pin.ON)
 
 angulo = # Colaca código aquí 👋🏻
@@ -259,11 +259,11 @@ while contador < 20:
 Si no sabes por donde empezar, te dejo el siguiente código como guía:
 
 ```python
-from motores import Servo360
+from motores import servo360
 from machine import Pin
 from time import sleep
 
-motor = Servo360(14)
+motor = servo360(14)
 led = Pin(2, Pin.OUT)
 
 angulo = 180
@@ -290,11 +290,11 @@ while bucle:
 Diseña un programa que haga lo mismo que en el ejercicio 4 pero sumale un buzzer que emita un sonido con una frecuencia distinta para cada led. Si tienes dudas de por donde empezar, te paso el siguiente código para que te guies:
 
 ```python
-from motores import Servo360
+from motores import servo360
 from machine import Pin
 from time import sleep
 
-motor = Servo360(14)
+motor = servo360(14)
 led = Pin(2, Pin.OUT)
 
 angulo = 180

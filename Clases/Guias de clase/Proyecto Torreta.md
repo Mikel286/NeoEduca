@@ -250,10 +250,10 @@ while bucle:
 Una vez la conexión este bien realizada y el archivo `motores.py` este guardado dentro de la placa, en un archivo nuevo vamos a probar el siguiente código:
 
 ```python
-from motores import Servo360
+from motores import servo360
 from time import sleep
 
-motor = Servo360(14)
+motor = servo360(14)
 
 angulo = int(input("Ingrese el angulo (0-180) del motor: "))
 tiempo = float(input("Ingrese el tiempo de giro del motor: "))
@@ -280,11 +280,11 @@ Escribe un programa que te permita mover en un angulo y tiempo especificos los m
 
 ```python
 from sensores import Ultrasonico
-from motores import Servo360
+from motores import servo360
 from machine import Pin
 from time import sleep
 
-motor = Servo360(14)
+motor = servo360(14)
 sensor = Ultrasonico()
 
 angulo = # Escribe codigo aquí 👋🏻
@@ -303,11 +303,11 @@ motor.detener()
 Incluye botones y diseña un programa que te permitan controlar manualmente uno de los motores del proyecto. Si tienes dudas de por donde empezar, te dejo el siguiente código de ayuda:
 
 ```python
-from motores import Servo360
+from motores import servo360
 from machine import Pin
 from time import sleep
 
-motor = Servo360(14)
+motor = servo360(14)
 
 switch_izq = Pin(0, Pin.IN, Pin.PULL_UP)
 switch_der = Pin(1, Pin.IN, Pin.PULL_UP)
@@ -331,10 +331,10 @@ Diseña un programa que permita al proyecto actuar como sonar capaz de localizar
 
 ```python
 from sensores import Ultrasonico
-from motores import Servo360
+from motores import servo360
 from time import sleep
 
-motor = Servo360(14)
+motor = servo360(14)
 sensor = Ultrasonico()
 
 angulo = int(input("Ingrese el angulo (0-180) del motor: "))
@@ -359,10 +359,10 @@ Diseña un programa que entregue un panel de control donde a traves de `inputs` 
 
 ```python
 from sensores import Ultrasonico
-from motores import Servo360
+from motores import servo360
 from time import sleep
 
-motor = Servo360(14)
+motor = servo360(14)
 sensor = Ultrasonico()
 
 bucle = True

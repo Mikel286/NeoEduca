@@ -158,8 +158,8 @@ Tenemos que comprobar que ambos motores funcionen correctamente, para ello, pode
 from motores import servo360, carro
 from time import sleep
 
-motor_izq = Servo360(14)
-motor_der = Servo360(15)
+motor_izq = servo360(14)
+motor_der = servo360(15)
 
 auto = carro(14, 15)
 
