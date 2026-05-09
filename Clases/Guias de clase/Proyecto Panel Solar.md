@@ -261,11 +261,11 @@ angulo_y = int(input("Ingrese el angulo (0-180) del eje y: "))
 tiempo_x = float(input("Ingrese el tiempo de giro del eje x: "))
 tiempo_y = float(input("Ingrese el tiempo de giro del eje y: "))
 
-motor_x.barrer(angulo_x)
+motor_x.girar(angulo_x)
 sleep(tiempo_x)
 motor_x.detener()
 
-motor_y.barrer(angulo_y)
+motor_y.girar(angulo_y)
 sleep(tiempo_y)
 motor_y.detener()
 ```
@@ -304,11 +304,11 @@ angulo_y = # Escribe codigo aquí 👋🏻
 tiempo_x = # Escribe codigo aquí 👋🏻
 tiempo_y = # Escribe codigo aquí 👋🏻
 
-motor_x.barrer(angulo_x)
+motor_x.girar(angulo_x)
 sleep(tiempo_x)
 motor_x.detener()
 
-motor_y.barrer(angulo_y)
+motor_y.girar(angulo_y)
 sleep(tiempo_y)
 motor_y.detener()
 

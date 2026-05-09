@@ -168,7 +168,7 @@ tiempo = 1
 bucle = True
 
 while bucle:
-    motor.barrer(angulo)
+    motor.girar(angulo)
     sleep(tiempo)
     motor.detener()
 ```
@@ -200,7 +200,7 @@ tiempo = # Escribe codigo aquí 👋🏻
 
 bucle = True
 while bucle:
-    motor.barrer(angulo)
+    motor.girar(angulo)
     sleep(tiempo)
     motor.detener()
 ```
