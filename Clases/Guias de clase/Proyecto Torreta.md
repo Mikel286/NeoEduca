@@ -1,4 +1,4 @@
-# Proyecto Panel Solar
+# Proyecto Torreta
 
 ## 👋🏻 Presentación
 
