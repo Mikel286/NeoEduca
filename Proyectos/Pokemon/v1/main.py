@@ -1,5 +1,5 @@
 from testing import data
-from testing import pokemon
+from testing.pokemon import Pokemon
 from testing import pokedex
 from random import randint
 
@@ -9,7 +9,7 @@ if __name__ == "__main__":
         pokedex = []
         for _ in range(150):
             name, type, id = data.line_decompress(line = data.data_read(file = file))
-            pokemon = pokemon.Pokemon(id, name, type)
+            pokemon = Pokemon(id, name, type)
             pokedex.append(pokemon)
 
     pokemon = pokedex[randint(0,150)]
