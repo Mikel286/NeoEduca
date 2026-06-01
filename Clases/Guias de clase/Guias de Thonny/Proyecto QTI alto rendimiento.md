@@ -196,7 +196,6 @@ Para testear los QTI, podemos usar el siguiente codigo que nos entregará el val
 
 from machine import Pin
 from time import sleep
-from acciones import Step_n, Step_Counter, Step_Avanzar
 
 xtr_izq = Pin(7, Pin.IN, Pin.PULL_UP)
 izq = Pin(8, Pin.IN, Pin.PULL_UP)
@@ -235,5 +234,143 @@ while bucle:
         print("Avanzar")
     else:
         print("Medicion no se reconoce...")
+```
 
+### Construyendo código `main.py`
+
+Para una pista como la siguiente, hay que construir el siguiente tipo de código `main.py`:
+
+![Imagen de pista versión 1](assets/Qti%20alto%20rendimiento%202.png)
+
+```python
+from motores import carro
+from machine import Pin
+from time import sleep
+
+xtr_izq = Pin(7, Pin.IN, Pin.PULL_UP)
+izq = Pin(8, Pin.IN, Pin.PULL_UP)
+der = Pin(10, Pin.IN, Pin.PULL_UP)
+xtr_der = Pin(11, Pin.IN, Pin.PULL_UP)
+
+auto = carro(14, 15)
+
+angulo_a = 0
+angulo_b = 180
+
+auto.setvelocidad(angulo_a, angulo_b)
+
+time_step = 0.5
+bucle = True 
+while bucle:
+    
+    medicion = f"{xtr_izq.value()}{izq.value()}{der.value()}{xtr_der.value()}"
+    print(medicion)
+
+    if medicion == "0000": # Caso NNNN
+        pass
+    elif medicion == "0001": # Caso NNNB
+        pass
+    elif medicion == "0010": # Caso NNBN
+        pass
+    elif medicion == "0011": # Caso NNBB
+        pass
+    elif medicion == "0100": # Caso NBNN
+        pass
+    elif medicion == "0101": # Caso NBNB
+        pass
+    elif medicion == "0110": # Caso NBBN
+        pass
+    elif medicion == "0111": # Caso NBBB
+        pass
+    elif medicion == "1000": # Caso BNNN
+        pass
+    elif medicion == "1001": # Caso BNNB
+        pass
+    elif medicion == "1010": # Caso BNBN
+        pass
+    elif medicion == "1011": # Caso BNBB
+        pass
+    elif medicion == "1100": # Caso BBNN
+        pass
+    elif medicion == "1101": # Caso BBNB
+        pass
+    elif medicion == "1110": # Caso BNNN
+        pass
+    elif medicion == "1111": # Caso BBBB
+        auto.moveadelante()
+
+    sleep(time_step)
+
+```
+
+## 💻 Recomendaciones del profe
+
+Para ayudaros un poco mas, aquí se deja una sección de estrategías avanzadas para resolver el desafio de rescate.
+
+### Calibración y condiciones
+
+Para el código general del desafio, se recomienda el siguiente programa que aprovecha el uso de la estructura de datos `dict()` para el manejo de condiciones:
+
+#### Archivo `main.py`
+
+```python
+from machine import Pin
+from time import sleep
+from acciones import Step_n, Step_Counter, Step_Avanzar
+
+xtr_izq = Pin(7, Pin.IN, Pin.PULL_UP)
+izq = Pin(8, Pin.IN, Pin.PULL_UP)
+cen = Pin(9, Pin.IN, Pin.PULL_UP)
+der = Pin(10, Pin.IN, Pin.PULL_UP)
+xtr_der = Pin(11, Pin.IN, Pin.PULL_UP)
+
+acciones = {
+    "00000":Step_Counter,
+    "00001":Step_n,
+    "00010":Step_n,
+    "00011":Step_n,
+    "00100":Step_n,
+    "00101":Step_n,
+    "00110":Step_n,
+    "00111":Step_n,
+    "01000":Step_n,
+    "01001":Step_n,
+    "01010":Step_n,
+    "01011":Step_n,
+    "01100":Step_n,
+    "01101":Step_n,
+    "01110":Step_n,
+    "01111":Step_n,
+    "10000":Step_n,
+    "10001":Step_n,
+    "10010":Step_n,
+    "10011":Step_n,
+    "10100":Step_n,
+    "10101":Step_n,
+    "10110":Step_n,
+    "10111":Step_n,
+    "11000":Step_n,
+    "11001":Step_n,
+    "11010":Step_n,
+    "11011":Step_n,
+    "11100":Step_n,
+    "11101":Step_n,
+    "11110":Step_n,
+    "11111":Step_Avanzar}
+
+time_step = 0.5
+bucle = True 
+while bucle:
+    
+    medicion = f"{xtr_izq.value()}{izq.value()}{cen.value()}{der.value()}{xtr_der.value()}"
+    bucle = acciones[medicion](medicion = medicion)
+    sleep(time_step)
+```
+
+#### Archivo `acciones.py`
+
+```python
+def Step_n(**kwargs):
+    print(f"Esta en la medicion: {kwargs["medicion"]}")
+    return True
 ```
