@@ -1,9 +1,9 @@
-from json import dump
-from sensores import Ultrasonico
-from time import sleep
-
 
 def json_ultrasonico() -> None:
+    
+    from json import dump
+    from sensores import Ultrasonico
+    from time import sleep
 
     sensor = Ultrasonico()
     mediciones = []
@@ -13,3 +13,11 @@ def json_ultrasonico() -> None:
         sleep(1)
     with open("medicion.json", "w") as file:
         dump(file, mediciones)
+        
+def json_clock_ultrasonico() -> None:
+    
+    from json import dump
+    from sensores import Ultrasonico
+    
+if __name__ == "__main__":
+    pass

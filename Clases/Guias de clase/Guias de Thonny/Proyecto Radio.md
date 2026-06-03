@@ -237,3 +237,86 @@ La partitura de la canción es la siguiente:
 - DO5  500ms - SOL4 500ms
 
 La frecuencia de las notas musicales es la siguiente
+
+### Ejercicio 5: Aprovechando funciones y ciclos
+Para este ejercicio se te pedira hacer un ciclo de 100 repeticiones de secuencia leds y nota musical de buzzer donde cada secuencia y nota sea distinta a la anterior. Para este ejercicio, tendrás que conocer los conceptos de `funciones` y `ciclos` que se te explica a continuación.
+
+#### Los ciclos en programación
+Los ciclos (o bucles) en Python permiten ejecutar un mismo bloque de código repetidamente mientras se cumpla una condición o se recorra una colección. Python utiliza principalmente dos tipos de estructuras:
+
+- Ciclos `while`: Son ciclos condicionales que nos permiten repetir un programa hasta que se cumpla un caso especifico.
+
+- Ciclos `for`: Son ciclos iterativo que permiten recorrer estruturas de datos o repetir un programa un cierto numero `n` de veces.
+
+Para este proyecto, sera ideal usar los ciclos `for` de una manera como esta:
+
+```python
+from random import randint
+from time import sleep
+
+for x in range(100):
+    numero_aleatorio = randint(1,100)
+    print(f"Iteracion {x} con numero aleatorio: {numero_aleatorio}")
+```
+
+Con este programa, generamos en pocas lineas 100 números aleatorios.
+
+#### Las funciones en programación
+Las funciones en Python son bloques de código reutilizables diseñados para realizar tareas específicas. Permiten organizar el programa, evitar la repetición de código y facilitar su mantenimiento.
+
+Para profundizar en funciones, tenemos que comprender los siguientes conceptos:
+
+- **Argumentos y Parámetros** 
+
+    - **Parámetros:** Son las variables que defines dentro de los paréntesis en la función (ej. nombre).
+    
+    - **Argumentos:** Son los valores reales que le envías a la función cuando la llamas (ej. "Ana")
+
+-  **Retorno de valores (`return`)**: La palabra clave `return` indica qué valor devolverá la función al finalizar su ejecución. Si no se utiliza return, la función devolverá por defecto `None`.
+
+Para un proyecto como la **radio**, una buena función sería la siguiente:
+
+```python
+from tone import Buzzer
+from machine import Pin
+from time import sleep
+
+led_izq = Pin(2, Pin.OUT)
+led_cen = Pin(3, Pin.OUT)
+led_der = Pin(4, Pin.OUT)
+
+buzzer = Buzzer(5)
+
+def radio(izq, cen, der, frecuencia, time):
+    led_izq.value(izq)
+    led_cen.value(cen)
+    led_der.value(der)
+    buzzer.on(frecuencia)
+    sleep(time)
+    led_izq.value(0)
+    led_cen.value(0)
+    led_der.value(0)
+    buzzer.off(0)
+    sleep(0.2)
+
+radio(1, 0, 1, 440, 0.5)
+```
+
+#### Ayuda para el ejercicio 
+Si no sabes por donde empezar, te dejo el siguiente código que te guiará:
+
+```python
+from tone import Buzzer
+from machine import Pin
+from time import sleep
+
+led_izq = Pin(2, Pin.OUT)
+led_cen = Pin(3, Pin.OUT)
+led_der = Pin(4, Pin.OUT)
+
+# Aquí hay una pieza de código que falta 👋🏻
+
+n = # Aqui hay que colocar código 👋🏻
+for x in range()
+    # Aquí hay que colocar código 👋🏻
+```
