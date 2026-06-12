@@ -73,7 +73,7 @@ class Buzzer:
 
 ## 💻 Código para empezar a probarlo
 
-Una vez la conexión este bien realizada y el archivo `keyboard.py` este guardado dentro de la placa, en un archivo nuevo vamos a probar el siguiente código:
+Una vez la conexión este bien realizada y el archivo `tone.py` este guardado dentro de la placa, en un archivo nuevo vamos a probar el siguiente código:
 
 ```python
 
