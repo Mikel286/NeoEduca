@@ -233,10 +233,10 @@ class Ultrasonico:
 Para probar el funcionamiento de un sensor LDR, podemos usar el siguiente código que nos entregará las lecturas de un sensor LDR:
 
 ```python
-from sensores import LDR
+from sensores import Ldr
 from time import sleep
 
-sensor = LDR(6)
+sensor = Ldr(6)
 
 bucle = True
 while bucle:
@@ -288,15 +288,15 @@ A traves del programa de prueba anterior, identifica con que angulo se realiza c
 Escribe un programa que te permita mover en un angulo y tiempo especificos los motores del proyecto y luego realiza una lectura con el sensor LDR. Si no sabes por donde empezar, te paso el siguiente código para que te guies:
 
 ```python
-from sensores import LDR
-from motores import Servo360
+from sensores import Ldr
+from motores import servo360
 from machine import Pin
 from time import sleep
 
 motor_x = servo360(14)
 motor_y = servo360(15)
 
-sensor = LDR(6)
+sensor = Ldr(6)
 
 angulo_x = # Escribe codigo aquí 👋🏻
 angulo_y = # Escribe codigo aquí 👋🏻
@@ -349,7 +349,7 @@ while bucle:
 Conecta mas sensores LDR y diseña un programa que te permita gestionarlos. Si no sabes por donde empezar te dejo el siguiente código para que te guies:
 
 ```python
-from sensores import LDR
+from sensores import Ldr
 from time import sleep
 
 sensor1 = # Colocar código aquí 👋🏻
@@ -373,8 +373,8 @@ Diseña un programa que entregue un panel de control donde a traves de `inputs` 
 from motores import servo360
 from time import sleep
 
-motor_x = Servo360(14)
-motor_y = Servo360(15)
+motor_x = servo360(14)
+motor_y = servo360(15)
 
 bucle = True
 

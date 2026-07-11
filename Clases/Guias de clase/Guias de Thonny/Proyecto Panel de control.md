@@ -84,6 +84,8 @@ Tendras que hacer un programa que sea capaz de controlar el encendido y apagado 
 
 ```python
 
+from machine import Pin
+
 bucle = True
 
 led = Pin(2, Pin.OUT)
@@ -108,6 +110,7 @@ Tendras que hacer un programa que sea capaz de controlar el encender por una det
 ```python
 
 from tone import Buzzer
+from time import sleep
 
 buzzer = Buzzer(5)
 

@@ -276,7 +276,7 @@ auto = carro(14,15)
 
 angulo_a = # Coloque el angulo aquí 👋🏻
 angulo_b = # Coloque el angulo aquí 👋🏻
-auto.setvelocidad()
+auto.setvelocidad(angulo_a, angulo_b)
 
 n_interaciones = # Coloca el numero de iteraciones
 for _ in range(n_interaciones):

@@ -236,6 +236,16 @@ while bucle:
         print("Medicion no se reconoce...")
 ```
 
+### Tabla de condiciones para 2 y 4 sensores
+
+Antes de resolver el ejercicio de rescate, es importante conocer la cantidad de posibilidades existentes para tanto para el uso de 2 a 4 sensores QTI.
+
+- Tabla de condiciones para 2 sensores QTI
+![Imagen de condiciones para 2 qti](assets/Qti%20alto%20rendimiento%203.png)
+
+- Tabla de condiciones para 4 sensores QTI
+![Imagen de condiciones para 4 qti](assets/Qti%20alto%20rendimiento%204.png)
+
 ### Construyendo código `main.py`
 
 Para una pista como la siguiente, hay que construir el siguiente tipo de código `main.py`:
@@ -267,37 +277,37 @@ while bucle:
     print(medicion)
 
     if medicion == "0000": # Caso NNNN
-        pass
+        print("Negro")
     elif medicion == "0001": # Caso NNNB
-        pass
+        print("Girar Izquierda")
     elif medicion == "0010": # Caso NNBN
-        pass
+        print("Avanzar")
     elif medicion == "0011": # Caso NNBB
-        pass
+        print("Girar Izquierda")
     elif medicion == "0100": # Caso NBNN
-        pass
+        print("Avanzar")
     elif medicion == "0101": # Caso NBNB
-        pass
+        print("Avanzar")
     elif medicion == "0110": # Caso NBBN
-        pass
+        print("Avanzar")
     elif medicion == "0111": # Caso NBBB
-        pass
+        print("Girar Izquierda")
     elif medicion == "1000": # Caso BNNN
-        pass
+        print("Girar Derecha")
     elif medicion == "1001": # Caso BNNB
-        pass
+        print("Avanzar")
     elif medicion == "1010": # Caso BNBN
-        pass
+        print("Avanzar")
     elif medicion == "1011": # Caso BNBB
-        pass
+        print("Girar Izquierda")
     elif medicion == "1100": # Caso BBNN
-        pass
+        print("Girar Derecha")
     elif medicion == "1101": # Caso BBNB
-        pass
+        print("Girar Derecha")
     elif medicion == "1110": # Caso BNNN
-        pass
+        print("Girar Derecha")
     elif medicion == "1111": # Caso BBBB
-        auto.moveadelante()
+        print("Avanzar")
 
     sleep(time_step)
 
@@ -316,61 +326,78 @@ Para el código general del desafio, se recomienda el siguiente programa que apr
 ```python
 from machine import Pin
 from time import sleep
-from acciones import Step_n, Step_Counter, Step_Avanzar
 
-xtr_izq = Pin(7, Pin.IN, Pin.PULL_UP)
-izq = Pin(8, Pin.IN, Pin.PULL_UP)
-cen = Pin(9, Pin.IN, Pin.PULL_UP)
-der = Pin(10, Pin.IN, Pin.PULL_UP)
-xtr_der = Pin(11, Pin.IN, Pin.PULL_UP)
+from motores import carro
 
-acciones = {
-    "00000":Step_Counter,
-    "00001":Step_n,
-    "00010":Step_n,
-    "00011":Step_n,
-    "00100":Step_n,
-    "00101":Step_n,
-    "00110":Step_n,
-    "00111":Step_n,
-    "01000":Step_n,
-    "01001":Step_n,
-    "01010":Step_n,
-    "01011":Step_n,
-    "01100":Step_n,
-    "01101":Step_n,
-    "01110":Step_n,
-    "01111":Step_n,
-    "10000":Step_n,
-    "10001":Step_n,
-    "10010":Step_n,
-    "10011":Step_n,
-    "10100":Step_n,
-    "10101":Step_n,
-    "10110":Step_n,
-    "10111":Step_n,
-    "11000":Step_n,
-    "11001":Step_n,
-    "11010":Step_n,
-    "11011":Step_n,
-    "11100":Step_n,
-    "11101":Step_n,
-    "11110":Step_n,
-    "11111":Step_Avanzar}
+# Blanco = 1
+# Negro = 0
 
-time_step = 0.5
-bucle = True 
-while bucle:
+qti_eizq = Pin(0, Pin.IN, Pin.PULL_UP)
+qti_izq = Pin(5, Pin.IN, Pin.PULL_UP)
+qti_der = Pin(2, Pin.IN, Pin.PULL_UP)
+qti_eder = Pin(1, Pin.IN, Pin.PULL_UP)
+
+auto = carro(13,14)
+auto.setvelocidad(97,83)
+
+cont = 0
+
+time_sleep = 0.2
+
+def medir():
+    medicion = f"{qti_eizq.value()}{qti_izq.value()}{qti_der.value()}{qti_eder.value()}"
+    #print(medicion)
+    return medicion
+
+def condiciones(medicion):
     
-    medicion = f"{xtr_izq.value()}{izq.value()}{cen.value()}{der.value()}{xtr_der.value()}"
-    bucle = acciones[medicion](medicion = medicion)
-    sleep(time_step)
-```
+    def adelante():
+        print("Moverse adelante")
+        auto.moveadelante()
+    
+    def izqurda():
+        print("Moverse izquierda")
+        auto.moveizquierda()
+        
+    def derecha():
+        print("Moverse derecha")
+        auto.movederecha()
+        
+    def negro():
+        global cont
+        cont += 1
+        
+        print(f"Negro: {cont}")
+    
+    acciones = {
+    "0000": negro, #NNNN
+    "0001": izqurda, #NNNB
+    "0010": adelante, #NNBN
+    "0011": izqurda, #NNBB
+    "0100": adelante, #NBNN
+    "0101": adelante, #NBNB
+    "0110": adelante, #NBBN
+    "0111": izqurda, #NBBB
+    "1000": derecha, #BNNN
+    "1001": adelante, #BNNB
+    "1010": adelante, #BNBN
+    "1011": izqurda, #BNBB
+    "1100": derecha, #BBNN
+    "1101": derecha, #BBNB
+    "1110": derecha, #BBBN
+    "1111": adelante  #BBBB
+    }
+    
+    acciones[medicion]()
 
-#### Archivo `acciones.py`
-
-```python
-def Step_n(**kwargs):
-    print(f"Esta en la medicion: {kwargs["medicion"]}")
-    return True
+def main():
+    
+    medicion = medir()
+    condiciones(medicion)
+    sleep(time_sleep)
+    
+bucle = True
+while bucle:
+    main()
+    
 ```
