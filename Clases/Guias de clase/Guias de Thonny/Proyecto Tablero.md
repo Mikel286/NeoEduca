@@ -331,14 +331,14 @@ Para aplicar lo aprendido, deberás completar cada uno de los ejercicios que se 
 ### Ejercicio 1: Siguiendo la ruta
 Construye un programa que te permita completar cada una de las siguientes rutas que se te muestran a continuación:
 
-![Tableros de ejercicio 1](assets/Tablero%201.png)
+![Tableros de ejercicio 1](assets/Proyecto%20Tablero%201.png)
 
 ### Ejercicio 2: Alumbrando la ruta
 Construye un programa que te permita completar cada una de las siguientes rutas usando leds en los puntos de cada ruta donde estos sean requeridos:
 
-![Tableros de ejercicio 2](assets/Tablero%202.png)
+![Tableros de ejercicio 2](assets/Proyecto%20Tablero%202.png)
 
 ### Ejercicio 3: Camino de música y luces
 Construye un programa que te permita completar cada una de las siguientes rutas usando leds y buzzer en los puntos de cada ruta donde estos sean requeridos:
 
-![Tableros de ejercicio 3](assets/Tablero%203.png)
+![Tableros de ejercicio 3](assets/Proyecto%20Tablero%203.png)
