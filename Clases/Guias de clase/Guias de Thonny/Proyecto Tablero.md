@@ -1,4 +1,4 @@
-## 💻 Proyecto Tablebro (Nivel Básico)
+# 💻 Proyecto Tablebro (Nivel Básico)
 
 ## 👋🏻 Presentación
 
@@ -342,3 +342,61 @@ Construye un programa que te permita completar cada una de las siguientes rutas 
 Construye un programa que te permita completar cada una de las siguientes rutas usando leds y buzzer en los puntos de cada ruta donde estos sean requeridos:
 
 ![Tableros de ejercicio 3](assets/Proyecto%20Tablero%203.png)
+
+### Ejercicio 4: De charca en charca
+Construye un programa que te permita recorrer un camino por el tablero donde vayas de un numero a otro en orden ascendente:
+
+![Tableros de ejercicio 4](assets/Proyecto%20Tablero%204.png)
+
+# 💻 Proyecto Tablero (Nivel Medio)
+
+## Ejercicios del proyecto
+Para aplicar lo aprendido, deberás completar cada uno de los ejercicios que se te presentan a continuación.
+
+### Ejercicio 1: Desplazando Obstaculos
+Construye un programa que te permita desplazar cada uno de los obstaculos del tablero a su punto designado. Las reglas son las siguientes.
+
+- No puedes estar en la misma casilla que este un bloque.
+
+- Solo la pala del robot puede entrar en contacto con un bloque.
+
+- Puedes colocarte en cualquier orientación y punto del tablero que respete las reglas anteriores.
+
+![Tableros de ejercicio 5](assets/Proyecto%20Tablero%205.png)
+
+### Ejercicio 2: Agarrando Obstaculos
+Construye un programa que te permita agarrar y desplazar cada uno de los obstaculos del tablero a su punto designado. Las reglas son las siguientes.
+
+- No puedes estar en la misma casilla que este un bloque.
+
+- Solo la pala del robot puede entrar en contacto con un bloque.
+
+- Puedes colocarte en cualquier orientación y punto del tablero que respete las reglas anteriores.
+
+![Tableros de ejercicio 6](assets/Proyecto%20Tablero%206.png)
+
+### Ejercicio 3: Depositando Obstaculos
+Construye un programa que te permita agarrar, elevar, desplazar y depositar cada uno de los obstaculos del tablero a su contenedor designado. Las reglas son las siguientes.
+
+- No puedes estar en la misma casilla que este un bloque.
+
+- Solo la pala del robot puede entrar en contacto con un bloque.
+
+- Puedes colocarte en cualquier orientación y punto del tablero que respete las reglas anteriores.
+
+![Tableros de ejercicio 7](assets/Proyecto%20Tablero%207.png)
+
+# Proyecto Tablero (Nivel Avanzado)
+
+## Ejercicios del proyecto
+Para aplicar lo aprendido, deberás completar cada uno de los ejercicios que se te presentan a continuación.
+
+### Ejercicio 1: Moviendome por laberintos
+Construye un programa que te permita llegar desde el punto de partida hasta la meta orientandote solo con sensores ultrasonido y moviendote con servomotores. No se puede entrar en contacto con las paredes en ningun momento.
+
+![Tableros de ejercicio 8](assets/Proyecto%20Tablero%208.png)
+
+### Ejercicio 2: Buscando Explosivos
+Construye un programa que te permita reconocer cada uno de los explosivos del tablero orientandote solo con sensores y moviendote con servomotores. No se puede entrar en contacto con las casillas que tengan un explosivo.
+
+![Tableros de ejercicio 9](assets/Proyecto%20Tablero%209.png)
