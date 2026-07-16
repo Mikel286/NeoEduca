@@ -139,7 +139,7 @@ Con este código obtenemos lo siguiente:
 
 Cuando pasa esto **NO HAY QUE ALARMARSE**, lo unico que nos esta diciendo es que el `test_2` ha fallado porque ha retornado un valor de 4 en vez de 0 que es el que se espera de la resta entre dos numeros. Calquier duda, copiad el texto que os imprima en pantalla y se lo pasais a chat gpt para que os explique las cosas locas que esten pasando.
 
-## Ejercicios de Aprendizaje
+## Ejercicios de Aprendizaje (Basico)
 
 Para prácticar el concepto de funciones, se dejan los siguientes ejercicios.
 
@@ -184,4 +184,67 @@ def test_division():
     for valor_a, valor_b, resultado in set_parametros:
         assert division(valor_a, valor_b) == resultado
 ```
+
+### Ejercicio 2: Comparaciones Lógicas de colores
+
+Construye un programa que te permita verificar las siguientes condiciones, **una por funcion**:
+
+- `solo_rojo`: Si el color que se le entrega es `rojo`, tiene que retornar `True` y en cualquier otro caso tiene que retornar `False`.
+
+- `rojo_o_verde`: Si el color que se le entrega es `rojo` o `verde`, tiene que retornar `True` y en cualquier otro caso tiene que retornar `False`.
+
+- `rojo_y_verde`: En esta función se usan dos parametros, `color_1` y `color_2`. Si `color_1` es rojo y `color_2` es verde, tiene que retornar `True` y en cualquier otro caso tiene que retornar `False`.
+
+- `rojo_verde`:  En esta función se usan dos parametros, `color_1` y `color_2`. Si se cumple cualquiera de las siguientes condiciones tiene que retornar `True` y en cualquier otro caso `False`:
+
+    - `color_1` y `color_2` rojo.
+
+    - `color_1` y `color_2` verde.
+
+    - `color_1` rojo y `color_2` verde.
+
+    - `color_1` verde y `color_2` rojo.
+
+Se deja el siguiente código incompleto para que trabajes:
+
+```python
+
+#------------[Funciones que hay que completar]------------
+
+def solo_rojo():
+    pass
+
+def rojo_o_verde():
+    pass
+
+def rojo_y_verde():
+    pass
+
+def rojo_verde():
+    pass
+
+#------------[Test que no hay que tocar]------------
+
+def test_solo_rojo():
+    lista_parametros = [("rojo", True),("azul", False), ("verde", False)]
+    for color, resultado in lista_parametros:
+        assert solo_rojo(color) == resultado
+
+def test_rojo_o_verde():
+    lista_parametros = [("rojo", True),("azul", False), ("verde", True)]
+    for color, resultado in lista_parametros:
+        assert rojo_o_verde(color) == resultado
+
+def test_rojo_y_verde():
+    lista_parametros = [("rojo", "verde", True),("azul", "rojo", False), ("verde", "rojo", False)]
+    for color_1, color_2, resultado in lista_parametros:
+        assert rojo_y_verde(color_1, color_2) == resultado
+
+def test_rojo_verde():
+    lista_parametros = [("rojo", "verde", True),("azul", "rojo", False), ("verde", "rojo", True), ("rojo", "rojo", True), ("verde", "verde", True)]
+    for color_1, color_2, resultado in lista_parametros:
+        assert rojo_verde(color_1, color_2) == resultado
+```
+
+
 
