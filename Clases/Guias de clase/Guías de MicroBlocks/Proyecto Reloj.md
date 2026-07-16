@@ -79,83 +79,19 @@ Incluye un led al proyecto y diseña un programa que te permita compaginar el en
 
 Diseña un programa que permita al proyecto compaginar el encendido y apagado de dos leds con el tic tac del reloj. Cuando hablo de compaginar el encendido y apagado de dos leds, me refiero al fenomeno que ocurre en este codigo:
 
-```python
-from machine import Pin
-from time import sleep
-
-led1 = Pin(2, Pin.OUT)
-led2 = Pin(3, Pin.OUT)
-
-contador = 1
-while contador < 20:
-    if contador % 2 == 0:
-        led1.on()
-        sleep(0.5)
-        led1.off()
-    elif contador % 2 == 1:
-        led2.on()
-        sleep(0.5)
-        led2.off()
-    contador += 1
-```
+<p align="center">
+  <img src="assets/Proyecto Reloj 6.png" width="400">
+</p>
 
 Si no sabes por donde empezar, te dejo el siguiente código como guía:
 
-```python
-from motores import servo360
-from machine import Pin
-from time import sleep
+<p align="center">
+  <img src="assets/Proyecto Reloj 7.png" width="400">
+</p>
 
-motor = servo360(14)
-led = Pin(2, Pin.OUT)
-
-angulo = 180
-tiempo = 0.02
-
-bucle = True
-contador = 1
-while bucle:
-
-    motor.girar(angulo)
-
-    if # Coloca código aquí 👋🏻
-        # Coloca código aquí 👋🏻
-    elif # Coloca código aquí 👋🏻
-        # Coloca código aquí 👋🏻
-    
-    motor.detener()
-    sleep(0.02)
-    contador += 1
-```
-
-
-### Ejercicio 5: Interfaz de control del proyecto
+### Ejercicio 5: Tic Tac con leds y sonido intercalados
 Diseña un programa que haga lo mismo que en el ejercicio 4 pero sumale un buzzer que emita un sonido con una frecuencia distinta para cada led. Si tienes dudas de por donde empezar, te paso el siguiente código para que te guies:
 
-```python
-from motores import servo360
-from machine import Pin
-from time import sleep
-
-motor = servo360(14)
-led = Pin(2, Pin.OUT)
-
-angulo = 180
-tiempo = 0.02
-
-bucle = True
-contador = 1
-while bucle:
-
-    motor.girar(angulo)
-
-    if # Coloca código aquí 👋🏻
-        # Coloca código aquí 👋🏻
-    elif # Coloca código aquí 👋🏻
-        # Coloca código aquí 👋🏻
-    
-    motor.detener()
-    sleep(0.02)
-    contador += 1
-```
-
+<p align="center">
+  <img src="assets/Proyecto Reloj 8.png" width="400">
+</p>
