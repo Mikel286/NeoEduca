@@ -86,8 +86,38 @@ Para entender todo lo anterior, se trabajan los siguientes circuitos en el siste
   <img src="assets/Electronica Basica 3.png" width="1000">
 </p>
 
-### 1
+### Conexión en serie de tres leds
 
 <p align="center">
   <img src="assets/Electronica Basica 4.png" width="1000">
 </p>
+
+### Conexión en paralelo de resistencias
+
+<p align="center">
+  <img src="assets/Electronica Basica 6.png" width="1000">
+</p>
+
+## ⚡ Proyecto Arbol de Navidad
+
+### Proyecto y materiales
+
+Para poner en práctica las simulaciones de circuitos practicadas en Tinkercad, vamos a realizar el siguiente proyecto físico de arbol de navidad. Para este proyecto, se necesitan los siguientes componentes:
+
+- Diseño 3D
+- Bateria 9V
+- Resistencia
+- Diodos led
+- Soldador
+- Pasta para soldar
+- Estaño
+- Guantes
+- Estación para soldar
+
+### Reglas del laboratorio
+
+Como profesor, debo preocuparme por la salud y seguridad de mis alumnos. Por ello, es **OBLIGATORIO** que se sigan las siguientes reglas de seguridad con el fin de evitar accidentes y lesiones:
+
+- El alumno tiene que tener los guantes puestos en todo momento.
+- El alumno debe dejar siempre el soldador dentro de la estación para soldar y no en cualquier otro lugar.
+- El alumno no ajitara en el aire o jugará con el soldador.
