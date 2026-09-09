@@ -9,13 +9,13 @@ der = Pin(10, Pin.IN, Pin.PULL_UP)
 xtr_der = Pin(11, Pin.IN, Pin.PULL_UP)
 
 auto = carro(15, 14)
-auto.setvelocidad(95, 85)
+auto.setvelocidad(94, 85)
 
 led_izq = Pin(2, Pin.OUT)
 led_der = Pin(3, Pin.OUT)
 
 cont = 0
-time_step = 0.05
+time_step = 0.01
 
 auto.movedetener()
 
