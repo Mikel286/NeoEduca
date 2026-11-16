@@ -130,3 +130,38 @@ Las pistas de este desafio son las siguientes tres:
     ![Imagen de desafio](assets/Proyecto%20Tablero%203.png)
 
     La resolución de este ejercicio es similar a los dos anteriores, tendras que agregar una nueva acción (puede ser a traves de una función) que permita la emisión de sonidos a traves del buzzer.
+
+## Desafios 2: Rampa
+
+### Contenidos del desafio
+
+Este desafio requiere del uso de los siguientes conceptos para ser resuelto:
+
+- Respecto a componentes de robótica
+
+    - Servomotores
+
+    - Diseño 3D
+
+### Descripción y reglas del desafio
+
+En este desafio tendra que hacer que tu robot pueda pasar por distintos tipos rampa, cada una con inclinación y obstaculos de distinto tipo.
+
+Las reglas del desafio son las siguientes:
+
+- Ninguna parte del robot puede salirse de la rampa en ningun momento.
+
+Dicho lo anterior, el sistema de rampa se verá de una forma similar a la siguiente:
+
+![Imagen de desafio](assets/Aprendiendo%20Desafios%202.png)
+
+### Material de apoyo
+
+Para este desafio se recomienda el uso de gomas de rueda que apliquen una mayor fricción con el suelo al que usualmente usan las ruedas comunes. Para esto, se recomienda el diseño de ruedas de caucho como las que se muestran en el siguiente video:
+
+- [🛞 Video de ruedas de caucho](https://youtu.be/GvWlYoa504A)
+
+Junto con el video, se entregan imagenes de referencia del estilo de diseño 3d que se debe crear para este tipo de ruedas:
+
+![Imagen de desafio](assets/Aprendiendo%20Desafios%201.png)
+
